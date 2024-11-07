@@ -9,6 +9,8 @@
 # ===============================
 # UNIX or MAC
 spring:
+  profiles:
+    active: h2
   datasource :
     url : jdbc:mysql://localhost:3306/PETCLINIC_DB?useSSL=false
     # Windoows
