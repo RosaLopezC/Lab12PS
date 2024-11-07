@@ -1,29 +1,23 @@
-package com.tecsup.petclinic.entities;
+package com.tecsup.petclinic.domain;
 
-import jakarta.persistence.*;
+public class VetTO {
 
-@Entity
-@Table(name = "veterinarios")
-public class Vet {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String nombre;
-
-    @Column(nullable = false)
     private String apellido;
-
-    @Column(nullable = false, unique = true)
     private String numeroLicencia;
-
-    @Column(nullable = false)
     private String especialidad;
 
-    // Constructor por defecto
-    public Vet() {}
+    public VetTO() {
+    }
+
+    public VetTO(Long id, String nombre, String apellido, String numeroLicencia, String especialidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numeroLicencia = numeroLicencia;
+        this.especialidad = especialidad;
+    }
 
     // Getters y Setters
     public Long getId() {
