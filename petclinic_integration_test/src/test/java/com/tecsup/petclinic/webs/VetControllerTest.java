@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.is;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles("h2")  // Activa el perfil H2 para esta prueba
+@ActiveProfiles("h2") 
 public class VetControllerTest {
 
     @Autowired
@@ -27,7 +27,6 @@ public class VetControllerTest {
 
     @Test
     public void testCreateVet() throws Exception {
-        // JSON con los datos del veterinario
         String vetJson = "{\"nombre\":\"John\",\"apellido\":\"Doe\",\"numeroLicencia\":\"12345\",\"especialidad\":\"Cardiología\"}";
 
         mockMvc.perform(post("/api/vets")
@@ -38,5 +37,7 @@ public class VetControllerTest {
                 .andExpect(jsonPath("$.apellido", is("Doe")))
                 .andExpect(jsonPath("$.numeroLicencia", is("12345")))
                 .andExpect(jsonPath("$.especialidad", is("Cardiología")));
+
+        System.out.println("Prueba de integración testCreateVet realizada exitosamente.");
     }
 }
