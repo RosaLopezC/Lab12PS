@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.is;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles("h2") 
+@ActiveProfiles("h2")
 public class VetControllerTest {
 
     @Autowired
